@@ -10,6 +10,7 @@
 </table>
 
 [![CI](https://github.com/thathman/PaystackOJS/actions/workflows/ci.yml/badge.svg)](https://github.com/thathman/PaystackOJS/actions/workflows/ci.yml)
+[![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-db61a2?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/thathman)
 
 Accept payments in Open Journal Systems 3.5 through [Paystack](https://paystack.com) — article and issue purchases, subscriptions, and publication fees. The reader pays on Paystack's hosted checkout; the plugin verifies every payment server-side before marking it fulfilled.
 
@@ -131,7 +132,7 @@ Payment emails are sent automatically using OJS-native templates installed with 
 | `PAYSTACK_PAYMENT_CONFIRMATION_ADMIN` | Journal contact, on successful payment |
 | `PAYSTACK_PAYMENT_FAILED` | Payer, when a charge fails |
 
-Due to an OJS restriction, paymethod plugins are only loaded on payment pages, so these templates cannot be *listed or edited* under **Settings › Emails** from this plugin alone (they still send correctly). The optional **Payment Method Support** companion addon bridges this gap — it makes the templates editable in the OJS UI and adds a theme-agnostic "Payment History" link to the user navigation. The addon is available to sponsors of this plugin; sponsorship funds ongoing maintenance and PKP-compatibility updates. Contact **hello@airixmedia.com**.
+Due to an OJS restriction, paymethod plugins are only loaded on payment pages, so these templates cannot be *listed or edited* under **Settings › Emails** from this plugin alone (they still send correctly). The optional **Payment Method Support** companion addon bridges this gap — it makes the templates editable in the OJS UI and adds a theme-agnostic "Payment History" link to the user navigation. The addon is available to sponsors of this plugin; sponsorship funds ongoing maintenance and PKP-compatibility updates. Sponsor via **[GitHub Sponsors](https://github.com/sponsors/thathman)** or contact **hello@airixmedia.com**.
 
 ---
 
