@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.1.0 – 2026-06-10
+
+### Security
+- Optional **webhook IP allowlist**: when enabled, webhooks are only accepted
+  from Paystack's documented source IPs (52.31.139.75, 52.49.173.169,
+  52.214.14.220), in addition to the HMAC signature check. Off by default
+  (proxies/CDNs can hide the client IP).
+
+### Reliability
+- Email-send idempotency moved from unbounded `emailed_success_*` plugin
+  settings into the TTL'd `paystack_webhook_dedupe` table (legacy keys still
+  honoured).
+
+### Documentation
+- New "Email templates & sponsorship" README section explaining the OJS
+  paymethod mailable restriction and the sponsor-only Payment Method Support
+  companion addon.
+
 ## 1.0.1 – 2026-06-10
 
 ### Reliability

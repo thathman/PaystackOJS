@@ -61,6 +61,11 @@ class PaystackPlugin extends PaymethodPlugin
      * Currencies supported by this plugin integration.
      */
     const SUPPORTED_CURRENCIES = ['NGN', 'USD', 'GHS', 'ZAR', 'KES', 'XOF'];
+    /**
+     * IPs Paystack documents as webhook sources (defense-in-depth; the HMAC
+     * signature remains the primary check). https://support.paystack.com/en/articles/2130946
+     */
+    const PAYSTACK_WEBHOOK_IPS = ['52.31.139.75', '52.49.173.169', '52.214.14.220'];
 
     /**
      * @see Plugin::getName
@@ -510,6 +515,13 @@ class PaystackPlugin extends PaymethodPlugin
                 'options' => array_map(function($level, $name) { return ['value' => $level, 'label' => $name]; }, array_keys(\APP\plugins\paymethod\paystack\classes\Logger::getLevels()), \APP\plugins\paymethod\paystack\classes\Logger::getLevels()),
                 'value' => \APP\plugins\paymethod\paystack\classes\Logger::getLogLevel($contextId),
                 'groupId' => 'paystackpayment',
+            ]))
+            ->addField(new \PKP\components\forms\FieldOptions('enforceIpAllowlist', [
+                'label' => __('plugins.paymethod.paystack.settings.enforceIpAllowlist'),
+                'description' => __('plugins.paymethod.paystack.settings.enforceIpAllowlist.description'),
+                'options' => [['value' => true, 'label' => __('common.enable')]],
+                'value' => (bool) ($this->getSetting($contextId, 'enforceIpAllowlist') ?? false),
+                'groupId' => 'paystackpayment',
             ]));
 
     }
@@ -614,7 +626,7 @@ class PaystackPlugin extends PaymethodPlugin
         }
 
         // Toggles (optional – only saved if provided)
-        foreach (['testMode'] as $k) {
+        foreach (['testMode','enforceIpAllowlist'] as $k) {
             if (array_key_exists($k, $all)) {
                 $toSave[$k] = $all[$k] === true || $all[$k] === 'true' || $all[$k] === 1 || $all[$k] === '1';
             }
@@ -720,6 +732,17 @@ class PaystackPlugin extends PaymethodPlugin
                 header('Content-Type: application/json');
                 echo json_encode(['status' => false, 'message' => 'Method not allowed']);
                 exit;
+            }
+            // Optional IP allowlist (defense-in-depth on top of the HMAC check)
+            if ((bool) ($this->getSetting($contextId, 'enforceIpAllowlist') ?? false)) {
+                $clientIp = $this->getClientIp();
+                if (!in_array($clientIp, self::PAYSTACK_WEBHOOK_IPS, true)) {
+                    Logger::warning($contextId, 'Paystack webhook rejected by IP allowlist', ['ip' => $clientIp]);
+                    http_response_code(403);
+                    header('Content-Type: application/json');
+                    echo json_encode(['status' => false, 'message' => 'IP not allowed']);
+                    exit;
+                }
             }
             // Get raw payload
             $payload = file_get_contents('php://input') ?: '';
@@ -1326,9 +1349,11 @@ class PaystackPlugin extends PaymethodPlugin
             return;
         }
 
-        // Success emails (idempotent check)
-        $emailKey = 'emailed_success_' . $reference;
-        if ($this->getSetting($contextId, $emailKey)) { return; }
+        // Success emails (idempotent; tracked in the dedupe table with TTL)
+        if ($this->isWebhookEventProcessed($contextId, 'email.success', $reference)
+            || $this->getSetting($contextId, 'emailed_success_' . $reference) /* legacy keys */) {
+            return;
+        }
 
         // Payer confirmation
         if (($this->getSetting($contextId, 'notifyAuthorOnPaid') ?? true) && $payer) {
@@ -1351,7 +1376,7 @@ class PaystackPlugin extends PaymethodPlugin
         }
 
         // Mark as sent
-        $this->updateSetting($contextId, $emailKey, 1);
+        $this->markWebhookEventProcessed($contextId, 'email.success', $reference);
         Logger::info($contextId, 'Paystack email dispatch completed', ['sent' => 1]);
     }
 
@@ -1434,6 +1459,29 @@ class PaystackPlugin extends PaymethodPlugin
     private function isPostRequest(): bool
     {
         return strtoupper((string) ($_SERVER['REQUEST_METHOD'] ?? 'GET')) === 'POST';
+    }
+
+    /**
+     * Resolve the connecting client IP. When the direct peer is a private or
+     * loopback address (i.e. a local reverse proxy), trust the last
+     * X-Forwarded-For hop, which that proxy appended.
+     */
+    private function getClientIp(): string
+    {
+        $remote = trim((string) ($_SERVER['REMOTE_ADDR'] ?? ''));
+        $isPrivate = $remote !== ''
+            && filter_var($remote, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) === false;
+        if ($isPrivate) {
+            $xff = (string) ($_SERVER['HTTP_X_FORWARDED_FOR'] ?? '');
+            if ($xff !== '') {
+                $hops = array_map('trim', explode(',', $xff));
+                $last = end($hops);
+                if ($last && filter_var($last, FILTER_VALIDATE_IP)) {
+                    return $last;
+                }
+            }
+        }
+        return $remote;
     }
 
     public function isCurrencyAllowed(int $contextId, string $currency): bool

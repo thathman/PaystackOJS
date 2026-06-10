@@ -572,3 +572,9 @@ msgstr "Payments will use Paystack test keys and will not charge real cards. Dis
 
 msgid "plugins.paymethod.paystack.settings.secretKeyKeepHint"
 msgstr "Enter a new key to update, or leave as-is to keep the current value."
+
+msgid "plugins.paymethod.paystack.settings.enforceIpAllowlist"
+msgstr "Webhook IP Allowlist"
+
+msgid "plugins.paymethod.paystack.settings.enforceIpAllowlist.description"
+msgstr "Only accept webhooks from Paystack's documented IP addresses (52.31.139.75, 52.49.173.169, 52.214.14.220), in addition to the signature check. Leave disabled if your server sits behind a proxy or CDN that hides the client IP, or if Paystack changes its published IPs."
