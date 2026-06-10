@@ -99,6 +99,9 @@ jobs:
       - name: All referenced keys present and no empty translations
         run: php tests/locale-check.php
 
+      - name: APC ownership compatibility
+        run: php tests/apc-owner-compatibility.php
+
   # ── 3. Security checks ─────────────────────────────────────────────────────
   security:
     name: Security checks

@@ -108,6 +108,19 @@ Paystack fires webhook   POST /webhook  (x-paystack-signature)
 
 ## Security
 
+### Temporary OJS APC ownership compatibility
+
+OJS 3.5 currently creates publication-fee queues under the editor who requests
+the payment while sending the payment link to the assigned author. See
+[pkp/pkp-lib#12885](https://github.com/pkp/pkp-lib/issues/12885).
+
+Until that is fixed upstream, this plugin may transfer an editor-owned APC
+queue to the logged-in user only when that user is the submission's primary
+assigned author, or the sole assigned author when no primary author can be
+resolved. All other users and all non-APC payment types remain denied. This
+path is a no-op for correctly owned queues and should be removed after the
+minimum supported OJS release includes the core fix.
+
 | Property | Implementation |
 |----------|----------------|
 | Webhook authenticity | HMAC-SHA512 over the raw body, `hash_equals()` |
