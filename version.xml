@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE version SYSTEM "../../../lib/pkp/dtd/pluginVersion.dtd">
+
+<!--
+  * plugins/paymethod/paystack/version.xml
+  *
+  * Copyright (c) 2025 Hendrix Nwaokolo, Airix Media
+  * Distributed under the GNU GPL v3. For full terms see the file LICENSE.
+  *
+  * Plugin version information.
+  -->
+<version>
+	<application>paystack</application>
+	<type>plugins.paymethod</type>
+    <release>1.0.1.0</release>
+    <date>2026-06-10</date>
+	<lazy-load>0</lazy-load>
+	<class>PaystackPlugin</class>
+</version>

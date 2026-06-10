@@ -1,0 +1,171 @@
+/*
+ * plugins/paymethod/paystack/css/frontend.css
+ * Standalone CSS override for Paystack payment plugin frontend pages.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Nunito:wght@400;600;700&display=swap");
+
+.page_paystack {
+    --psx-primary: #0f5132;
+    --psx-secondary: #22c55e;
+    --psx-surface: #ffffff;
+    --psx-surface-off: #f0fdf4;
+    --psx-text: #052e16;
+    --psx-muted: #166534;
+    --psx-border: #bbf7d0;
+    --psx-success: #15803d;
+
+    --psx-serif: "Merriweather", serif;
+    --psx-sans: "Nunito", sans-serif;
+
+    --psx-radius: 12px;
+    --psx-shadow: 0 8px 24px -10px rgba(20, 83, 45, 0.25);
+
+    font-family: var(--psx-sans);
+    color: var(--psx-text);
+    margin: 40px auto;
+    padding: 0;
+}
+
+.page_paystack .pmt-main {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.page_paystack .pmt-container {
+    width: 100%;
+    padding: 20px;
+    border-radius: 14px;
+    background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 58%);
+}
+
+.page_paystack h1 {
+    font-family: var(--psx-serif);
+    color: var(--psx-primary);
+    font-size: 31px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.page_paystack .lead {
+    color: var(--psx-muted);
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 16px;
+}
+
+.page_paystack .pmt-payment-details__header,
+.page_paystack .pmt-payment-confirmation__header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.page_paystack .pmt-payment-card {
+    background: var(--psx-surface);
+    border-radius: var(--psx-radius);
+    padding: 32px;
+    box-shadow: var(--psx-shadow);
+    border: 1px solid var(--psx-border);
+    margin-bottom: 24px;
+}
+
+.page_paystack .pmt-payment-card__header h2 {
+    font-family: var(--psx-serif);
+    color: var(--psx-primary);
+    font-size: 20px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--psx-secondary);
+}
+
+.page_paystack .pmt-payment-details__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--psx-border);
+}
+
+.page_paystack .pmt-payment-details__row:last-child {
+    border-bottom: none;
+}
+
+.page_paystack .pmt-payment-details__label {
+    color: var(--psx-muted);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.page_paystack .pmt-payment-details__value {
+    color: var(--psx-text);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.page_paystack .pmt-payment-details__amount strong {
+    font-size: 24px;
+    color: var(--psx-primary);
+}
+
+.page_paystack .pmt-payment-details__actions,
+.page_paystack .pmt-payment-confirmation__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.page_paystack .pmt-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    font-family: var(--psx-sans);
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.page_paystack .pmt-btn--primary {
+    background: linear-gradient(90deg, #16a34a, #22c55e);
+    color: #ffffff;
+}
+
+.page_paystack .pmt-btn--primary:hover {
+    background: linear-gradient(90deg, #15803d, #16a34a);
+    transform: translateY(-1px);
+}
+
+.page_paystack .pmt-btn--ghost {
+    background: transparent;
+    color: var(--psx-muted);
+    border: 1px solid var(--psx-border);
+}
+
+.page_paystack .pmt-btn--ghost:hover {
+    background: var(--psx-surface-off);
+    color: var(--psx-primary);
+    border-color: var(--psx-primary);
+}
+
+.page_paystack .pmt-payment-confirmation__icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+    color: var(--psx-success);
+}
+
+.page_paystack .pmt-payment-confirmation__message {
+    text-align: center;
+    background: rgba(22, 163, 74, 0.1);
+    color: var(--psx-success);
+    padding: 16px;
+    border-radius: 8px;
+    font-weight: 600;
+}

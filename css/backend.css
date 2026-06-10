@@ -1,0 +1,42 @@
+/*
+ * Paystack backend skin (upgrade-safe, plugin-scoped)
+ */
+
+.psx-panel {
+  border: 1px solid #bbf7d0;
+  border-radius: 14px;
+  padding: 16px;
+  background:
+    radial-gradient(circle at 5% -10%, rgba(34, 197, 94, 0.14), transparent 34%),
+    radial-gradient(circle at 95% 0%, rgba(16, 185, 129, 0.12), transparent 40%),
+    #ffffff;
+}
+
+.psx-panel h3 {
+  margin-top: 0;
+  font-weight: 700;
+  color: #14532d;
+}
+
+.psx-panel .psx-table {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #bbf7d0;
+}
+
+.psx-panel .psx-table th {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  color: #052e16;
+}
+
+.psx-panel .pkpButton,
+.psx-panel .pkp_button {
+  border-radius: 8px;
+}
+
+.psx-panel code {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 4px;
+  padding: 2px 6px;
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE emails SYSTEM "../../../lib/pkp/dtd/emailTemplates.dtd">
+<!--
+  * plugins/paymethod/paystack/emailTemplates.xml
+  *
+  * Copyright (c) 2025 Hendrix Nwaokolo, Airix Media
+  * Distributed under the GNU GPL v3. For full terms see the file LICENSE.
+  *
+  * Email templates XML file.
+  -->
+<emails>
+	<email key="PAYSTACK_PAYMENT_CONFIRMATION" name="mailable.paystack.paymentConfirmation.name" subject="emails.paystack.paymentConfirmation.subject" body="emails.paystack.paymentConfirmation.body" description="mailable.paystack.paymentConfirmation.description" />
+	<email key="PAYSTACK_PAYMENT_CONFIRMATION_ADMIN" name="mailable.paystack.paymentConfirmationAdmin.name" subject="emails.paystack.paymentConfirmationAdmin.subject" body="emails.paystack.paymentConfirmationAdmin.body" description="mailable.paystack.paymentConfirmationAdmin.description" />
+	<email key="PAYSTACK_PAYMENT_FAILED" name="mailable.paystack.paymentFailed.name" subject="emails.paystack.paymentFailed.subject" body="emails.paystack.paymentFailed.body" description="mailable.paystack.paymentFailed.description" />
+</emails>
+

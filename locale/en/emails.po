@@ -1,0 +1,70 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-31T00:00:00+00:00\n"
+"PO-Revision-Date: 2025-10-31T00:00:00+00:00\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "plugins.paymethod.paystack.email.paymentConfirmation.name"
+msgstr "Payment Confirmation"
+
+msgid "plugins.paymethod.paystack.email.paymentConfirmation.description"
+msgstr "This email is automatically sent to users when their payment is successfully completed."
+
+msgid "plugins.paymethod.paystack.email.paymentConfirmation.subject"
+msgstr "Payment Confirmation - {$contextName}"
+
+msgid "plugins.paymethod.paystack.email.paymentConfirmation.body"
+msgstr "<!DOCTYPE html><html><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Payment Confirmation</title></head><body style=\"margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background-color:#f5f5f5;line-height:1.6;color:#333333;\"><table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#f5f5f5;padding:20px 0;\"><tr><td align=\"center\"><table width=\"600\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1);max-width:600px;margin:0 auto;\"><tr><td style=\"background:#000000;padding:40px 30px;text-align:center;\">{$contextLogoUrl}<h1 style=\"color:#ffffff;font-size:28px;font-weight:700;margin:0;padding:0;\">Payment Confirmed!</h1><p style=\"color:rgba(255,255,255,0.9);font-size:16px;margin:10px 0 0;padding:0;\">Thank you for your payment</p></td></tr><tr><td style=\"padding:40px 30px;\"><p style=\"font-size:16px;color:#333333;margin:0 0 20px;padding:0;\">Dear {$recipientName},</p><p style=\"font-size:16px;color:#555555;margin:0 0 30px;padding:0;line-height:1.8;\">Your payment has been successfully processed and confirmed. We appreciate your support!</p><div style=\"background-color:#f8fafc;border-left:4px solid #000000;padding:20px;border-radius:8px;margin:30px 0;\"><h2 style=\"font-size:20px;font-weight:600;color:#1e293b;margin:0 0 20px;padding:0;\">Payment Details</h2><table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\"><tr><td style=\"padding:8px 0;font-size:14px;color:#64748b;\"><strong style=\"color:#1e293b;\">Payment For:</strong></td><td style=\"padding:8px 0;font-size:14px;color:#1e293b;text-align:right;\">{$paymentName}</td></tr><tr><td style=\"padding:8px 0;font-size:14px;color:#64748b;\"><strong style=\"color:#1e293b;\">Amount:</strong></td><td style=\"padding:8px 0;font-size:18px;font-weight:700;color:#059669;text-align:right;\">{$currencySymbol}{$paymentAmount}</td></tr><tr><td style=\"padding:8px 0;font-size:14px;color:#64748b;\"><strong style=\"color:#1e293b;\">Transaction Reference:</strong></td><td style=\"padding:8px 0;font-size:14px;color:#1e293b;text-align:right;font-family:'Courier New',monospace;\">{$paymentReference}</td></tr>{$transactionIdHtml}<tr><td style=\"padding:8px 0;font-size:14px;color:#64748b;\"><strong style=\"color:#1e293b;\">Payment Date:</strong></td><td style=\"padding:8px 0;font-size:14px;color:#1e293b;text-align:right;\">{$paymentDate}</td></tr></table></div><p style=\"font-size:14px;color:#64748b;margin:30px 0 0;padding:0;line-height:1.8;\">If you have any questions about this payment, please don't hesitate to contact us at <a href=\"mailto:{$contextContactEmail}\" style=\"color:#000000;text-decoration:none;\">{$contextContactEmail}</a>.</p></td></tr><tr><td style=\"background-color:#f8fafc;padding:30px;text-align:center;border-top:1px solid #e2e8f0;\"><p style=\"font-size:12px;color:#94a3b8;margin:0;padding:0;\">This is an automated message from <a href=\"{$contextUrl}\" style=\"color:#000000;text-decoration:none;\">{$contextName}</a></p></td></tr></table></td></tr></table></body></html>"
+
+msgid "plugins.paymethod.paystack.email.paymentConfirmation.footer"
+msgstr ""
+
+msgid "plugins.paymethod.paystack.email.paymentConfirmationAdmin.name"
+msgstr "Payment Notification (Administrator)"
+
+msgid "plugins.paymethod.paystack.email.paymentConfirmationAdmin.description"
+msgstr "This email is automatically sent to journal administrators when a payment is successfully completed."
+
+msgid "plugins.paymethod.paystack.email.paymentConfirmationAdmin.subject"
+msgstr "New Payment Received - {$contextName}"
+
+msgid "plugins.paymethod.paystack.email.paymentConfirmationAdmin.body"
+msgstr "<!DOCTYPE html><html><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Payment Notification</title></head><body style=\"margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background-color:#f5f5f5;line-height:1.6;color:#333333;\"><table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#f5f5f5;padding:20px 0;\"><tr><td align=\"center\"><table width=\"600\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.1);max-width:600px;margin:0 auto;\"><tr><td style=\"background:linear-gradient(135deg,#059669 0%,#047857 100%);padding:40px 30px;text-align:center;\">{if $contextLogoUrl}<img src=\"{$contextLogoUrl}\" alt=\"{$contextName}\" style=\"max-width:200px;height:auto;margin-bottom:20px;background:#fff;padding:10px;border-radius:8px;\" />{/if}<h1 style=\"color:#ffffff;font-size:28px;font-weight:700;margin:0;padding:0;\">New Payment Received</h1><p style=\"color:rgba(255,255,255,0.9);font-size:16px;margin:10px 0 0;padding:0;\">Payment successfully processed</p></td></tr><tr><td style=\"padding:40px 30px;\"><p style=\"font-size:16px;color:#333333;margin:0 0 20px;padding:0;\">Dear Journal Manager,</p><p style=\"font-size:16px;color:#555555;margin:0 0 30px;padding:0;line-height:1.8;\">A new payment has been successfully processed through Paystack.</p><div style=\"background-color:#f8fafc;border-left:4px solid #059669;padding:20px;border-radius:8px;margin:30px 0;\"><h2 style=\"font-size:20px;font-weight:600;color:#1e293b;margin:0 0 20px;padding:0;\">Payment Details</h2><table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\"><tr><td style=\"padding:8px 0;font-size:14px;color:#64748b;\"><strong style=\"color:#1e293b;\">Payer:</strong></td><td style=\"padding:8px 0;font-size:14px;color:#1e293b;text-align:right;\">{$payerName} ({$payerEmail})</td></tr><tr><td style=\"padding:8px 0;font-size:14px;color:#64748b;\"><strong style=\"color:#1e293b;\">Payment For:</strong></td><td style=\"padding:8px 0;font-size:14px;color:#1e293b;text-align:right;\">{$paymentName}</td></tr><tr><td style=\"padding:8px 0;font-size:14px;color:#64748b;\"><strong style=\"color:#1e293b;\">Amount:</strong></td><td style=\"padding:8px 0;font-size:18px;font-weight:700;color:#059669;text-align:right;\">{$currencySymbol}{$paymentAmount}</td></tr><tr><td style=\"padding:8px 0;font-size:14px;color:#64748b;\"><strong style=\"color:#1e293b;\">Transaction Reference:</strong></td><td style=\"padding:8px 0;font-size:14px;color:#1e293b;text-align:right;font-family:'Courier New',monospace;\">{$paymentReference}</td></tr>{if $transactionId}<tr><td style=\"padding:8px 0;font-size:14px;color:#64748b;\"><strong style=\"color:#1e293b;\">Transaction ID:</strong></td><td style=\"padding:8px 0;font-size:14px;color:#1e293b;text-align:right;font-family:'Courier New',monospace;\">{$transactionId}</td></tr>{/if}<tr><td style=\"padding:8px 0;font-size:14px;color:#64748b;\"><strong style=\"color:#1e293b;\">Payment Date:</strong></td><td style=\"padding:8px 0;font-size:14px;color:#1e293b;text-align:right;\">{$paymentDate}</td></tr></table></div><div style=\"text-align:center;margin:30px 0;\"><a href=\"{$paymentManagementUrl}\" style=\"display:inline-block;background-color:#059669;color:#ffffff;text-decoration:none;padding:14px 32px;border-radius:8px;font-weight:600;font-size:16px;\">Manage Payments</a></div></td></tr><tr><td style=\"background-color:#f8fafc;padding:30px;text-align:center;border-top:1px solid #e2e8f0;\"><p style=\"font-size:12px;color:#94a3b8;margin:0;padding:0;\">This is an automated message from <a href=\"{$contextUrl}\" style=\"color:#059669;text-decoration:none;\">{$contextName}</a></p></td></tr></table></td></tr></table></body></html>"
+
+msgid "plugins.paymethod.paystack.email.paymentConfirmationAdmin.footer"
+msgstr "<br><br>—<br>This is an automated message from <a href=\"{$contextUrl}\">{$contextName}</a>."
+
+msgid "plugins.paymethod.paystack.email.paymentReference"
+msgstr "Payment Reference"
+
+msgid "plugins.paymethod.paystack.email.transactionId"
+msgstr "Transaction ID"
+
+msgid "plugins.paymethod.paystack.email.paymentDate"
+msgstr "Payment Date"
+
+msgid "plugins.paymethod.paystack.email.paymentReceiptUrl"
+msgstr "Receipt URL"
+
+msgid "plugins.paymethod.paystack.email.payerName"
+msgstr "Payer Name"
+
+msgid "plugins.paymethod.paystack.email.payerEmail"
+msgstr "Payer Email"
+
+msgid "plugins.paymethod.paystack.email.paymentManagementUrl"
+msgstr "Payment Management URL"
+
+msgid "plugins.paymethod.paystack.email.currencySymbol"
+msgstr "Currency Symbol"
+
+msgid "plugins.paymethod.paystack.email.contextLogoUrl"
+msgstr "Journal Logo URL"
+

@@ -1,0 +1,25 @@
+{
+    "name": "airixmedia/ojs-paystack",
+    "description": "Paystack payment gateway plugin for OJS (Open Journal Systems)",
+    "license": "GPL-3.0-or-later",
+    "type": "ojs-plugin",
+    "require": {
+        "php": ">=8.1"
+    },
+    "suggest": {
+        "guzzlehttp/guzzle": "Bundled with OJS core (lib/pkp); no separate install required."
+    },
+    "autoload": {
+        "psr-4": {
+            "APP\\plugins\\paymethod\\paystack\\": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "Hendrix Nwaokolo",
+            "email": "hello@airixmedia.com",
+            "homepage": "https://airixmedia.com",
+            "role": "Developer"
+        }
+    ]
+}

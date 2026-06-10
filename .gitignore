@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# Build artifacts
+build/
+dist/
+*.tar
+*.tar.gz
+*.zip
+
+# Local scripts
+composer-setup.php
+
+# Logs
+*.log
+

@@ -1,0 +1,574 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-31T00:00:00+00:00\n"
+"PO-Revision-Date: 2025-10-31T00:00:00+00:00\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "plugins.paymethod.paystack.displayName"
+msgstr "Paystack Payment Gateway"
+
+msgid "plugins.paymethod.paystack.description"
+msgstr "Payments will be processed using the Paystack payment gateway."
+
+msgid "plugins.paymethod.paystack"
+msgstr "Paystack Fee Payment"
+
+msgid "plugins.paymethod.paystack.settings"
+msgstr "Paystack Payment Settings"
+
+msgid "plugins.paymethod.paystack.settings.description"
+msgstr "Configure your Paystack payment gateway settings including API keys, test mode, email notifications, and currency restrictions."
+
+msgid "plugins.paymethod.paystack.settings.testMode"
+msgstr "Test Mode"
+
+msgid "plugins.paymethod.paystack.settings.testMode.description"
+msgstr "When enabled, the plugin will use test API keys. Test mode transactions will not process real payments."
+
+msgid "plugins.paymethod.paystack.settings.testPublicKey"
+msgstr "Test Public Key"
+
+msgid "plugins.paymethod.paystack.settings.testPublicKey.description"
+msgstr "Your Paystack test public key (starts with pk_test_). Get this from your Paystack Dashboard → Settings → API Keys & Webhooks."
+
+msgid "plugins.paymethod.paystack.settings.testSecretKey"
+msgstr "Test Secret Key"
+
+msgid "plugins.paymethod.paystack.settings.testSecretKey.description"
+msgstr "Your Paystack test secret key (starts with sk_test_). Get this from your Paystack Dashboard → Settings → API Keys & Webhooks."
+
+msgid "plugins.paymethod.paystack.settings.livePublicKey"
+msgstr "Live Public Key"
+
+msgid "plugins.paymethod.paystack.settings.livePublicKey.description"
+msgstr "Your Paystack live public key (starts with pk_live_). Get this from your Paystack Dashboard → Settings → API Keys & Webhooks. Only use in production!"
+
+msgid "plugins.paymethod.paystack.settings.liveSecretKey"
+msgstr "Live Secret Key"
+
+msgid "plugins.paymethod.paystack.settings.liveSecretKey.description"
+msgstr "Your Paystack live secret key (starts with sk_live_). Get this from your Paystack Dashboard → Settings → API Keys & Webhooks. Only use in production!"
+
+msgid "plugins.paymethod.paystack.settings.secretKeyMasked"
+msgstr "The current key is masked for security. Enter a new key to update, or leave it as-is to keep the current value."
+
+msgid "plugins.paymethod.paystack.testMode.banner.message"
+msgstr "⚠️ Paystack Payment Gateway is currently in TEST MODE. All transactions will use test keys and no real payments will be processed."
+
+msgid "plugins.paymethod.paystack.settings.publicKey"
+msgstr "Public Key"
+
+msgid "plugins.paymethod.paystack.settings.publicKey.description"
+msgstr "Your Paystack public key (starts with pk_test_ or pk_live_)"
+
+msgid "plugins.paymethod.paystack.settings.secretKey"
+msgstr "Secret Key"
+
+msgid "plugins.paymethod.paystack.settings.secretKey.description"
+msgstr "Your Paystack secret key (starts with sk_test_ or sk_live_)"
+
+msgid "plugins.paymethod.paystack.settings.supportedCurrencies"
+msgstr "Supported Currencies"
+
+msgid "plugins.paymethod.paystack.settings.supportedCurrencies.description"
+msgstr "Paystack supports the following currencies for payments. Ensure your journal's currency is set to one of these supported currencies in the journal settings."
+
+msgid "plugins.paymethod.paystack.error"
+msgstr "A transaction error occurred. Please contact the journal manager for details."
+
+msgid "plugins.paymethod.paystack.error.httpsRequired"
+msgstr "HTTPS is required for payments. Enable SSL or switch to Test Mode."
+
+# Emails manager
+msgid "plugins.paymethod.paystack.emails.tab"
+msgstr "Emails"
+
+msgid "plugins.paymethod.paystack.emails.author"
+msgstr "Author confirmation"
+
+msgid "plugins.paymethod.paystack.emails.manager"
+msgstr "Manager notification"
+
+msgid "plugins.paymethod.paystack.emails.subject"
+msgstr "Subject"
+
+msgid "plugins.paymethod.paystack.emails.bodyHtml"
+msgstr "Body (HTML)"
+
+msgid "plugins.paymethod.paystack.emails.notifyAuthorOnPaid"
+msgstr "Send to author on successful payment"
+
+msgid "plugins.paymethod.paystack.emails.notifyManagersOnPaid"
+msgstr "Send to managers on successful payment"
+
+msgid "plugins.paymethod.paystack.emails.variables"
+msgstr "Usable variables"
+
+msgid "plugins.paymethod.paystack.emails.failed"
+msgstr "Payment failed"
+
+msgid "plugins.paymethod.paystack.emails.refund"
+msgstr "Refund processed"
+
+msgid "plugins.paymethod.paystack.emails.receipt"
+msgstr "Payment receipt"
+
+msgid "plugins.paymethod.paystack.emails.notifyAuthorOnFailed"
+msgstr "Send to author when payment fails"
+
+msgid "plugins.paymethod.paystack.emails.notifyAuthorOnRefund"
+msgstr "Send to author when a refund is processed"
+
+msgid "plugins.paymethod.paystack.common.send"
+msgstr "Send"
+
+# Fallbacks for commonly referenced core keys to avoid missing-key warnings
+msgid "common.send"
+msgstr "Send"
+
+msgid "manager.manager"
+msgstr "Manager"
+
+# Transactions and Webhooks UI
+msgid "plugins.paymethod.paystack.transactions.tab"
+msgstr "Transactions"
+
+msgid "plugins.paymethod.paystack.transactions.id"
+msgstr "ID"
+
+msgid "plugins.paymethod.paystack.transactions.type"
+msgstr "Type"
+
+msgid "plugins.paymethod.paystack.transactions.assocId"
+msgstr "Assoc ID"
+
+msgid "plugins.paymethod.paystack.transactions.amount"
+msgstr "Amount"
+
+msgid "plugins.paymethod.paystack.transactions.currency"
+msgstr "Currency"
+
+msgid "plugins.paymethod.paystack.transactions.reference"
+msgstr "Reference"
+
+msgid "plugins.paymethod.paystack.transactions.view"
+msgstr "View"
+
+msgid "plugins.paymethod.paystack.transactions.viewOnPaystack"
+msgstr "View on Paystack"
+
+msgid "plugins.paymethod.paystack.webhooks.tab"
+msgstr "Webhooks"
+
+msgid "plugins.paymethod.paystack.webhooks.id"
+msgstr "ID"
+
+msgid "plugins.paymethod.paystack.webhooks.event"
+msgstr "Event"
+
+msgid "plugins.paymethod.paystack.webhooks.reference"
+msgstr "Reference"
+
+msgid "plugins.paymethod.paystack.webhooks.verified"
+msgstr "Verified"
+
+# Settlements & Details
+msgid "plugins.paymethod.paystack.settlements.tab"
+msgstr "Settlements"
+
+msgid "plugins.paymethod.paystack.error.transactionFailed"
+msgstr "Payment transaction failed. Please try again or contact support."
+
+msgid "plugins.paymethod.paystack.error.verificationFailed"
+msgstr "Payment verification failed. Please contact support."
+
+msgid "plugins.paymethod.paystack.settings.callbackUrl"
+msgstr "Callback URL"
+
+msgid "plugins.paymethod.paystack.settings.callbackUrl.description"
+msgstr "Paystack redirects users to this URL after payment completion. Copy this URL and add it to your Paystack Dashboard → Settings → API Keys & Webhooks → Callback URL."
+
+msgid "plugins.paymethod.paystack.settings.webhookUrl"
+msgstr "Webhook URL"
+
+msgid "plugins.paymethod.paystack.settings.webhookUrl.description"
+msgstr "Paystack sends payment events to this URL via POST. Copy this URL and add it to your Paystack Dashboard → Settings → API Keys & Webhooks → Webhook URL. Webhooks provide reliable server-to-server notifications."
+
+msgid "plugins.paymethod.paystack.settings.createCustomerOnPaid"
+msgstr "Create/Update Paystack customer on successful payment"
+
+msgid "plugins.paymethod.paystack.settings.createCustomerOnPaid.description"
+msgstr "When enabled, the plugin will ensure a Paystack customer record exists for the paying user, storing the customer code for future features (e.g., saved authorizations)."
+
+msgid "plugins.paymethod.paystack.settings.sendConfirmationEmail"
+msgstr "Send Confirmation Email to User"
+
+msgid "plugins.paymethod.paystack.settings.sendConfirmationEmail.description"
+msgstr "When enabled, users will receive an email confirmation with payment details after successful payment."
+
+msgid "plugins.paymethod.paystack.settings.sendAdminNotification"
+msgstr "Send Notification Email to Administrators"
+
+msgid "plugins.paymethod.paystack.settings.sendAdminNotification.description"
+msgstr "When enabled, journal managers and subscription managers will receive an email notification when a payment is completed."
+
+msgid "plugins.paymethod.paystack.settings.autoEmailOnWebhookFailure"
+msgstr "Auto-Email on Webhook Failure"
+
+msgid "plugins.paymethod.paystack.settings.autoEmailOnWebhookFailure.description"
+msgstr "When enabled, administrators will receive an email notification if a webhook verification fails or payment processing encounters an error."
+
+msgid "plugins.paymethod.paystack.settings.allowedCurrencies"
+msgstr "Allowed Currencies"
+
+msgid "plugins.paymethod.paystack.settings.allowedCurrencies.description"
+msgstr "Comma-separated list of currency codes that are allowed for payments (e.g., NGN,USD,EUR,GBP). Leave empty to allow all supported currencies."
+
+msgid "plugins.paymethod.paystack.settings.testModeBannerEnabled"
+msgstr "Show Test Mode Banner"
+
+msgid "plugins.paymethod.paystack.settings.testModeBannerEnabled.description"
+msgstr "When enabled, a warning banner will be displayed to administrators when test mode is active."
+
+msgid "plugins.paymethod.paystack.settings.logLevel"
+msgstr "Error Log Level"
+
+msgid "plugins.paymethod.paystack.settings.logLevel.description"
+msgstr "Select the minimum log level to record. Lower levels include higher levels (e.g., WARNING includes ERROR and CRITICAL)."
+
+msgid "plugins.paymethod.paystack.settings.logLevel.debug"
+msgstr "DEBUG - All events (detailed debugging)"
+
+msgid "plugins.paymethod.paystack.settings.logLevel.info"
+msgstr "INFO - Informational events (recommended)"
+
+msgid "plugins.paymethod.paystack.settings.logLevel.warning"
+msgstr "WARNING - Warning events and above (default)"
+
+msgid "plugins.paymethod.paystack.settings.logLevel.error"
+msgstr "ERROR - Error events and above"
+
+msgid "plugins.paymethod.paystack.settings.logLevel.critical"
+msgstr "CRITICAL - Critical events only"
+
+msgid "plugins.paymethod.paystack.settings.testActions"
+msgstr "Test Connection & Webhook"
+
+msgid "plugins.paymethod.paystack.settings.testActions.description"
+msgstr "Test your Paystack API connection and webhook endpoint to ensure everything is working correctly."
+
+msgid "plugins.paymethod.paystack.settings.testConnection"
+msgstr "Test API Connection"
+
+msgid "plugins.paymethod.paystack.settings.testWebhook"
+msgstr "Test Webhook"
+
+msgid "plugins.paymethod.paystack.settings.testing"
+msgstr "Testing..."
+
+msgid "plugins.paymethod.paystack.settings.connectionTestSuccess"
+msgstr "Connection test successful!"
+
+msgid "plugins.paymethod.paystack.settings.connectionTestFailed"
+msgstr "Connection test failed"
+
+msgid "plugins.paymethod.paystack.settings.testPanel"
+msgstr "Test"
+
+msgid "plugins.paymethod.paystack.settings.connectionTest"
+msgstr "Test API Keys"
+
+msgid "plugins.paymethod.paystack.settings.testing"
+msgstr "Testing..."
+
+msgid "plugins.paymethod.paystack.settings.webhookTestSuccess"
+msgstr "Webhook test successful!"
+
+msgid "plugins.paymethod.paystack.settings.webhookTestFailed"
+msgstr "Webhook test failed"
+
+msgid "plugins.paymethod.paystack.settings.testError"
+msgstr "Test error"
+
+msgid "plugins.paymethod.paystack.webhookFailure.subject"
+msgstr "Paystack Webhook Failure Alert - {journal}"
+
+msgid "plugins.paymethod.paystack.webhookFailure.body"
+msgstr "A Paystack webhook has failed processing:\n\nJournal: {journal}\nReference: {reference}\nError: {error}\nTime: {time}\n\nPlease check the webhook logs and payment status."
+
+msgid "plugins.paymethod.paystack.transactionDetails"
+msgstr "Paystack Transaction Details"
+
+msgid "plugins.paymethod.paystack.receipt.title"
+msgstr "Payment Receipt"
+
+msgid "plugins.paymethod.paystack.dashboard.title"
+msgstr "Paystack Payments"
+
+msgid "plugins.paymethod.paystack.dashboard.todayTotal"
+msgstr "Today's Total"
+
+msgid "plugins.paymethod.paystack.dashboard.mtdTotal"
+msgstr "Month-to-Date Total"
+
+msgid "plugins.paymethod.paystack.paymentDetails.description"
+msgstr "Review your payment details below and click the button to proceed with payment."
+
+msgid "plugins.paymethod.paystack.paymentDetails.paymentInformation"
+msgstr "Payment Information"
+
+msgid "plugins.paymethod.paystack.paymentDetails.paymentFor"
+msgstr "Payment For"
+
+msgid "plugins.paymethod.paystack.paymentDetails.amount"
+msgstr "Amount"
+
+msgid "plugins.paymethod.paystack.paymentDetails.currency"
+msgstr "Currency"
+
+msgid "plugins.paymethod.paystack.paymentDetails.payNow"
+msgstr "Pay Now"
+
+msgid "plugins.paymethod.paystack.paymentConfirmation.title"
+msgstr "Payment Successful"
+
+msgid "plugins.paymethod.paystack.paymentConfirmation.description"
+msgstr "Your payment has been successfully processed."
+
+msgid "plugins.paymethod.paystack.paymentConfirmation.paymentDetails"
+msgstr "Payment Details"
+
+msgid "plugins.paymethod.paystack.paymentConfirmation.successMessage"
+msgstr "Thank you for your payment. Your transaction has been completed successfully."
+
+msgid "plugins.paymethod.paystack.paymentConfirmation.returnToArticle"
+msgstr "Return to Article"
+
+msgid "plugins.paymethod.paystack.paymentHistory.title"
+msgstr "Payment History"
+
+msgid "plugins.paymethod.paystack.paymentHistory.description"
+msgstr "View your payment history and transaction details."
+
+msgid "plugins.paymethod.paystack.paymentHistory.viewDescription"
+msgstr "View your complete payment history, including transaction references and payment details."
+
+msgid "plugins.paymethod.paystack.paymentHistory.viewHistory"
+msgstr "View Payment History"
+
+msgid "plugins.paymethod.paystack.paymentHistory.actions"
+msgstr "Actions"
+
+msgid "plugins.paymethod.paystack.paymentHistory.viewReceipt"
+msgstr "View receipt"
+
+msgid "plugins.paymethod.paystack.paymentReceipt.title"
+msgstr "Payment Receipt"
+
+msgid "plugins.paymethod.paystack.paymentHistory.method"
+msgstr "Method"
+
+msgid "plugins.paymethod.paystack.paymentReceipt.totalPaid"
+msgstr "Total paid"
+
+msgid "plugins.paymethod.paystack.paymentReceipt.detailsHeading"
+msgstr "Payment details"
+
+msgid "plugins.paymethod.paystack.paymentReceipt.subtotal"
+msgstr "Subtotal"
+
+msgid "plugins.paymethod.paystack.paymentReceipt.vat"
+msgstr "VAT"
+
+msgid "plugins.paymethod.paystack.paymentReceipt.billedTo"
+msgstr "Billed to"
+
+msgid "plugins.paymethod.paystack.paymentReceipt.paymentMethod"
+msgstr "Payment method"
+
+msgid "plugins.paymethod.paystack.paymentReceipt.note"
+msgstr "Payments are non-refundable once processing of the manuscript has begun. Refunds may be considered only for duplicate payments or for a withdrawal made before editorial processing starts. For assistance, contact support@eftbhs.com."
+
+msgid "plugins.paymethod.paystack.paymentHistory.emptyEyebrow"
+msgstr "Nothing here yet"
+
+msgid "plugins.paymethod.paystack.paymentHistory.summary.count"
+msgstr "Payments"
+
+msgid "plugins.paymethod.paystack.paymentHistory.summary.totalPaid"
+msgstr "Total paid"
+
+msgid "plugins.paymethod.paystack.paymentHistory.summary.first"
+msgstr "First payment"
+
+msgid "plugins.paymethod.paystack.paymentHistory.summary.latest"
+msgstr "Latest payment"
+
+msgid "plugins.paymethod.paystack.paymentHistory.date"
+msgstr "Date"
+
+msgid "plugins.paymethod.paystack.paymentHistory.itemDescription"
+msgstr "Description"
+
+msgid "plugins.paymethod.paystack.paymentHistory.amount"
+msgstr "Amount"
+
+msgid "plugins.paymethod.paystack.paymentHistory.status"
+msgstr "Status"
+
+msgid "plugins.paymethod.paystack.paymentHistory.completed"
+msgstr "Completed"
+
+msgid "plugins.paymethod.paystack.paymentHistory.transactionReference"
+msgstr "Transaction Reference"
+
+msgid "plugins.paymethod.paystack.paymentHistory.emptyTitle"
+msgstr "No Payment History"
+
+msgid "plugins.paymethod.paystack.paymentHistory.empty"
+msgstr "You have not made any payments yet."
+
+msgid "mailable.paystack.paymentConfirmation.name"
+msgstr "Paystack Payment Confirmation"
+
+msgid "mailable.paystack.paymentConfirmation.description"
+msgstr "Email sent to users confirming successful payment completion"
+
+msgid "mailable.paystack.paymentConfirmationAdmin.name"
+msgstr "Paystack Payment Notification (Administrator)"
+
+msgid "mailable.paystack.paymentConfirmationAdmin.description"
+msgstr "Email sent to administrators notifying them of completed payments"
+msgid "plugins.paymethod.paystack.emails.branding"
+msgstr "Branding"
+
+msgid "plugins.paymethod.paystack.emails.logoUrl"
+msgstr "Fallback Logo URL"
+
+msgid "plugins.paymethod.paystack.emails.logoUrl.help"
+msgstr "Optional. If your journal logo can’t be detected automatically, provide a direct URL to a PNG/JPG to show on PDF receipts."
+
+msgid "plugins.paymethod.paystack.emails.brandColor"
+msgstr "Brand Color (hex)"
+
+msgid "plugins.paymethod.paystack.emails.brandColor.help"
+msgstr "Used for headings and table headers in PDF receipts (e.g., #16a34a)."
+
+# Email Templates
+msgid "emails.paystack.paymentConfirmation.subject"
+msgstr "Paystack Payment Received — {$contextName}"
+
+msgid "emails.paystack.paymentConfirmation.body"
+msgstr "<p>Dear {$recipientName},</p><p>We have received your payment of <strong>{$paymentAmount} {$paymentCurrency}</strong>.</p><p>Reference: <strong>{$paymentReference}</strong><br>Date: {$paymentDate}</p><p>You can return to your workflow here: <a href=\"{$paymentUrl}\">{$paymentUrl}</a></p><p>Regards,<br>{$contextName}</p>"
+
+msgid "emails.paystack.paymentConfirmationAdmin.subject"
+msgstr "Paystack — New Payment Received — {$paymentReference}"
+
+msgid "emails.paystack.paymentConfirmationAdmin.body"
+msgstr "<p>Hello {$managerName},</p><p>A new payment of <strong>{$paymentAmount} {$paymentCurrency}</strong> has been completed.</p><p><strong>Reference:</strong> {$paymentReference}<br><strong>Payer:</strong> {$payerName} ({$payerEmail})<br><strong>Submission:</strong> {$submissionTitle}</p><p>You can view the transaction details here: <a href=\"{$paymentManagementUrl}\">Payment Management</a></p><p>Regards,<br>{$contextName}</p>"
+
+msgid "mailable.paystack.paymentFailed.name"
+msgstr "Paystack Payment Failed"
+
+msgid "mailable.paystack.paymentFailed.description"
+msgstr "Email sent to the payer when a payment attempt fails."
+
+msgid "emails.paystack.paymentFailed.subject"
+msgstr "Payment Failed — {$contextName}"
+
+msgid "emails.paystack.paymentFailed.body"
+msgstr "<p>Dear {$recipientName},</p><p>Your payment attempt for <strong>{$paymentAmount} {$paymentCurrency}</strong> was not successful.</p><p>Reference: <strong>{$paymentReference}</strong><br>Date: {$paymentDate}</p><p>Please try again or contact the journal if the issue persists.</p><p>Regards,<br>{$contextName}</p>"
+
+msgid "plugins.paymethod.paystack.emails.installTemplates"
+msgstr "Install Default Templates"
+
+msgid "plugins.paymethod.paystack.emails.templatesInstalled"
+msgstr "Email templates installed successfully."
+
+msgid "plugins.paymethod.paystack.emails.openEmailTemplates"
+msgstr "Open Email Templates"
+
+msgid "plugins.paymethod.paystack.emails.templateHealthCheck"
+msgstr "Template Health Check"
+
+msgid "plugins.paymethod.paystack.emails.templateHealthMissingContext"
+msgstr "No journal context found for template health check."
+
+msgid "plugins.paymethod.paystack.emails.templateHealthFailed"
+msgstr "Template health check failed"
+
+msgid "plugins.paymethod.paystack.emails.templateHealthWarn"
+msgstr "Template health check completed with warnings."
+
+msgid "plugins.paymethod.paystack.emails.templateHealthOk"
+msgstr "Template health check passed."
+
+msgid "plugins.paymethod.paystack.emails.templateHealthMissingDefaultLocales"
+msgstr "Missing default template locales:"
+
+msgid "plugins.paymethod.paystack.emails.templateHealthDefaultsOk"
+msgstr "Default template locales are complete."
+
+msgid "plugins.paymethod.paystack.emails.templateHealthContextMissing"
+msgstr "Context override template not found."
+
+msgid "plugins.paymethod.paystack.emails.templateHealthContextOk"
+msgstr "Context override template exists."
+
+msgid "plugins.paymethod.paystack.email.contextLogoUrl"
+msgstr "Journal logo (HTML block)"
+
+msgid "plugins.paymethod.paystack.email.currencySymbol"
+msgstr "Currency symbol"
+
+msgid "plugins.paymethod.paystack.email.paymentCurrency"
+msgstr "Payment currency code"
+
+msgid "plugins.paymethod.paystack.email.paymentDate"
+msgstr "Payment date/time"
+
+msgid "plugins.paymethod.paystack.email.paymentReceiptUrl"
+msgstr "Payment receipt URL"
+
+msgid "plugins.paymethod.paystack.email.paymentReference"
+msgstr "Payment reference"
+
+msgid "plugins.paymethod.paystack.email.paymentUrl"
+msgstr "Payment return URL"
+
+msgid "plugins.paymethod.paystack.email.transactionId"
+msgstr "Transaction ID"
+
+msgid "plugins.paymethod.paystack.email.payerName"
+msgstr "The payer's full name"
+
+msgid "plugins.paymethod.paystack.email.payerEmail"
+msgstr "The payer's email address"
+
+msgid "plugins.paymethod.paystack.email.paymentManagementUrl"
+msgstr "Link to manage payments in the dashboard"
+
+msgid "plugins.paymethod.paystack.email.paymentConfirmationAdmin.footer"
+msgstr "This is an automated payment notification."
+
+msgid "plugins.paymethod.paystack.error.configuration"
+msgstr "The payment gateway is not configured correctly. Please contact the journal."
+
+msgid "plugins.paymethod.paystack.email.paymentAmount"
+msgstr "Payment amount"
+
+msgid "plugins.paymethod.paystack.settings.testModeBanner.title"
+msgstr "Paystack Test Mode is enabled."
+
+msgid "plugins.paymethod.paystack.settings.testModeBanner.body"
+msgstr "Payments will use Paystack test keys and will not charge real cards. Disable Test Mode before enabling live payments."
+
+msgid "plugins.paymethod.paystack.settings.secretKeyKeepHint"
+msgstr "Enter a new key to update, or leave as-is to keep the current value."
