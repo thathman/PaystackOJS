@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.1.1 – 2026-06-10
+
+### Compatibility / Security
+- Added a temporary, fail-closed workaround for
+  [pkp/pkp-lib#12885](https://github.com/pkp/pkp-lib/issues/12885). OJS 3.5
+  creates APC queues under the requesting editor while notifying the author.
+  Only the primary assigned author, or the sole assigned author when no primary
+  author can be resolved, may repair that queue ownership before checkout.
+- Existing ownership checks remain enforced for all payment types. The
+  workaround is a no-op when OJS supplies the correct owner and should be
+  removed once the minimum supported OJS version contains the upstream fix.
+
 ## 1.1.0 – 2026-06-10
 
 ### Security

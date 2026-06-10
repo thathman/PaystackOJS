@@ -33,6 +33,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use PKP\plugins\PaymethodPlugin;
 use APP\plugins\paymethod\paystack\classes\Logger;
+use APP\plugins\paymethod\paystack\classes\ApcOwnerCompatibility;
 use APP\plugins\paymethod\paystack\mail\PaymentConfirmation;
 use APP\plugins\paymethod\paystack\mail\PaymentConfirmationAdmin;
 use APP\plugins\paymethod\paystack\mail\PaymentFailed;
@@ -705,7 +706,7 @@ class PaystackPlugin extends PaymethodPlugin
                 $qp = $queuedPaymentDao ? $queuedPaymentDao->getById($queuedPaymentId) : null;
                 if ($qp) {
                     $user = $request->getUser();
-                    if (!$user || (int) $qp->getUserId() !== (int) $user->getId()) {
+                    if (!ApcOwnerCompatibility::authorizeAndRepair($qp, $user, $queuedPaymentDao)) {
                         $this->renderMessage($request, 'user.authorization.accessDenied');
                         return;
                     }

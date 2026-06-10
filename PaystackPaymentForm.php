@@ -19,8 +19,10 @@ use APP\core\Request;
 use APP\facades\Repo;
 use APP\template\TemplateManager;
 use PKP\config\Config;
+use PKP\db\DAORegistry;
 use PKP\form\Form;
 use PKP\payment\PaymentManager;
+use APP\plugins\paymethod\paystack\classes\ApcOwnerCompatibility;
 use PKP\payment\QueuedPayment;
 
 class PaystackPaymentForm extends Form
@@ -96,7 +98,8 @@ class PaystackPaymentForm extends Form
         // Show payment details page instead of directly redirecting
         $templateMgr = TemplateManager::getManager($request);
         $currentUser = $request->getUser();
-        if (!$currentUser || (int) $this->_queuedPayment->getUserId() !== (int) $currentUser->getId()) {
+        $queuedPaymentDao = DAORegistry::getDAO('QueuedPaymentDAO');
+        if (!ApcOwnerCompatibility::authorizeAndRepair($this->_queuedPayment, $currentUser, $queuedPaymentDao)) {
             $templateMgr->assign('message', 'user.authorization.accessDenied');
             $templateMgr->display('frontend/pages/message.tpl');
             return;
@@ -203,7 +206,8 @@ class PaystackPaymentForm extends Form
                 throw new \Exception('Invalid payment request!');
             }
             $user = $request->getUser();
-            if (!$user || (int) $this->_queuedPayment->getUserId() !== (int) $user->getId()) {
+            $queuedPaymentDao = DAORegistry::getDAO('QueuedPaymentDAO');
+            if (!ApcOwnerCompatibility::authorizeAndRepair($this->_queuedPayment, $user, $queuedPaymentDao)) {
                 throw new \Exception('Unauthorized payment request');
             }
 
