@@ -36,10 +36,6 @@ use APP\plugins\paymethod\paystack\classes\Logger;
 use APP\plugins\paymethod\paystack\mail\PaymentConfirmation;
 use APP\plugins\paymethod\paystack\mail\PaymentConfirmationAdmin;
 use APP\plugins\paymethod\paystack\mail\PaymentFailed;
-use APP\plugins\paymethod\paystack\PaystackEmailDataMigration;
-use PKP\install\Installer;
-
-require_once(dirname(__FILE__) . '/PaystackEmailDataMigration.php');
 require_once(dirname(__FILE__) . '/PaystackWebhookTableMigration.php');
 require_once(dirname(__FILE__) . '/mail/traits/PaystackVariables.php');
 require_once(dirname(__FILE__) . '/mail/PaymentFailed.php');
@@ -133,7 +129,6 @@ class PaystackPlugin extends PaymethodPlugin
             // Always register these hooks
             Hook::add('Form::config::before', $this->addSettings(...));
             Hook::add('Mailer::Mailables', $this->addMailable(...));
-            Hook::add('Installer::postInstall', $this->updateSchema(...));
 
             // Inject frontend stylesheets for payment pages
             Hook::add('TemplateManager::display', $this->loadFrontendStyles(...));
@@ -1299,7 +1294,8 @@ class PaystackPlugin extends PaymethodPlugin
                     'reference' => $reference ? substr($reference, 0, 128) : null,
                     'verified' => $verified ? 1 : 0,
                     'payload' => json_encode($payload, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE),
-                    'created_at' => $now,
+                    // TIMESTAMP columns reject ISO-8601 strings under strict SQL mode
+                    'created_at' => date('Y-m-d H:i:s'),
                 ]);
                 return;
             }
@@ -1545,25 +1541,14 @@ class PaystackPlugin extends PaymethodPlugin
     }
 
     /**
-     * @copydoc Plugin::updateSchema()
+     * @copydoc Plugin::getInstallMigration()
+     *
+     * Returning the migration here lets PKP's native install machinery
+     * (Plugin::register → Installer::postInstall → Plugin::updateSchema, and
+     * the installPluginVersion.php CLI tool) create the plugin tables.
      */
-    public function updateSchema($hookName, $args)
+    public function getInstallMigration()
     {
-        $installer = $args[0];
-        $result = & $args[1];
-        $migrations = [
-            new PaystackWebhookTableMigration(),
-            new PaystackEmailDataMigration($this),
-        ];
-        foreach ($migrations as $migration) {
-            try {
-                $migration->up();
-            } catch (\Exception $e) {
-                $installer->setError(Installer::INSTALLER_ERROR_DB, __('installer.installMigrationError', ['class' => get_class($migration), 'message' => $e->getMessage()]));
-                $result = false;
-                break;
-            }
-        }
-        return false;
+        return new PaystackWebhookTableMigration();
     }
 }
