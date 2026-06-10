@@ -9,6 +9,8 @@
 </tr>
 </table>
 
+[![CI](https://github.com/thathman/PaystackOJS/actions/workflows/ci.yml/badge.svg)](https://github.com/thathman/PaystackOJS/actions/workflows/ci.yml)
+
 Accept payments in Open Journal Systems 3.5 through [Paystack](https://paystack.com) — article and issue purchases, subscriptions, and publication fees. The reader pays on Paystack's hosted checkout; the plugin verifies every payment server-side before marking it fulfilled.
 
 Supported currencies: **NGN, USD, GHS, ZAR, KES, XOF** (your Paystack account must be eligible for the currency you charge in).
