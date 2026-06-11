@@ -27,6 +27,7 @@ Supported currencies: **NGN, USD, GHS, ZAR, KES, XOF** (your Paystack account mu
 - Idempotent fulfilment: DB-backed webhook dedupe (30-day TTL) plus a unique-insert guard that closes the race between the callback and the webhook
 - Manager **Transactions** list with full and partial refunds
 - User-facing **payment history** and **receipt** pages (ownership-checked)
+- Submission **Payment tab** in the editorial workflow — fee status, amount, gateway, and a Pay Now button (via the [Payment Method Support companion](#submission-payment-tab-companion-addon))
 - Payment emails via OJS-native templates — payer confirmation, failure notice, manager notification
 - File-based logging with a configurable level per journal
 - No bundled dependencies (uses the Guzzle client shipped with OJS core) and zero modifications to OJS core files — hooks only
@@ -146,6 +147,44 @@ Payment emails are sent automatically using OJS-native templates installed with 
 | `PAYSTACK_PAYMENT_FAILED` | Payer, when a charge fails |
 
 Due to an OJS restriction, paymethod plugins are only loaded on payment pages, so these templates cannot be *listed or edited* under **Settings › Emails** from this plugin alone (they still send correctly). The optional **Payment Method Support** companion addon bridges this gap — it makes the templates editable in the OJS UI and adds a theme-agnostic "Payment History" link to the user navigation. The addon is available to sponsors of this plugin; sponsorship funds ongoing maintenance and PKP-compatibility updates. Sponsor via **[GitHub Sponsors](https://github.com/sponsors/thathman)** or contact **hello@airixmedia.com**. Access is automatic: within the hour of sponsoring you'll receive a GitHub invitation to the private addon repository — accept it and download the addon from its Releases page.
+
+With the companion enabled, the gateway templates become searchable and editable like any other OJS email:
+
+![Paystack email templates in Settings › Emails](docs/screenshots/manage-emails-templates.png)
+
+---
+
+## Submission Payment tab (companion addon)
+
+The **Payment Method Support** companion (same sponsor addon as above) also adds a **Payment** tab to the submission panel in the editorial workflow. Editors and the payer see the publication fee's status at a glance — amount, gateway, and date paid — and the payer gets a **Pay Now** button that starts the normal Paystack checkout for the queued fee:
+
+![Payment tab showing a pending fee](docs/screenshots/workflow-payment-tab-pending.png)
+
+Once the payment completes (callback or webhook), the tab reflects it:
+
+![Payment tab showing a paid fee](docs/screenshots/workflow-payment-tab-paid.png)
+
+The tab is gateway-agnostic: it reads OJS's own queued/completed payment records, so it requires no Paystack-specific setup. It appears only when publication fees are enabled for the journal, and the payment status endpoint is ownership-checked (the payer, assigned editors, and managers).
+
+> **Requires:** OJS 3.5+, this gateway plugin enabled, and the Payment Method Support companion **1.2.0+** installed and enabled (available to sponsors — see [Email templates](#email-templates) above for how access works). Without the companion, payments still work normally through the payment links OJS emails to the payer; you just don't get the in-workflow tab.
+
+---
+
+## Screenshots
+
+The full payment journey with this plugin and the companion addon:
+
+| Step | Screenshot |
+|------|------------|
+| Plugin settings (Settings › Distribution › Payments) | [settings.png](docs/screenshots/settings.png) |
+| Fee request email with Pay Now button | [email-payment-request.png](docs/screenshots/email-payment-request.png) |
+| Workflow Payment tab — pending | [workflow-payment-tab-pending.png](docs/screenshots/workflow-payment-tab-pending.png) |
+| Reader-facing payment page | [payment-page.png](docs/screenshots/payment-page.png) |
+| Paystack hosted checkout (test mode) | [paystack-test-checkout.png](docs/screenshots/paystack-test-checkout.png) |
+| Receipt page after verification | [payment-receipt.png](docs/screenshots/payment-receipt.png) |
+| Payer confirmation email | [email-payment-received.png](docs/screenshots/email-payment-received.png) |
+| Workflow Payment tab — paid | [workflow-payment-tab-paid.png](docs/screenshots/workflow-payment-tab-paid.png) |
+| Editable email templates (companion) | [manage-emails-templates.png](docs/screenshots/manage-emails-templates.png) |
 
 ---
 
