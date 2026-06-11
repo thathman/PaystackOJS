@@ -185,6 +185,8 @@ The full payment journey with this plugin and the companion addon:
 | Payer confirmation email | [email-payment-received.png](docs/screenshots/email-payment-received.png) |
 | Workflow Payment tab — paid | [workflow-payment-tab-paid.png](docs/screenshots/workflow-payment-tab-paid.png) |
 | Editable email templates (companion) | [manage-emails-templates.png](docs/screenshots/manage-emails-templates.png) |
+| Payment History link in the user menu | [payment-history-nav.png](docs/screenshots/payment-history-nav.png) |
+| Payment History page (totals + all transactions) | [payment-history.png](docs/screenshots/payment-history.png) |
 
 ---
 
