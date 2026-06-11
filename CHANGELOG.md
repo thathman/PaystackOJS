@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.2.0 - 2026-06-11
+
+### Added
+- Payment description now includes the article title for **submission fees**
+  (submissionFee plugin, payment type 5) as well as publication fees:
+  "Submission Fee — <Article Title>" on the payment details page and in
+  the initiated charge.
+
 ## 1.1.1 – 2026-06-10
 
 ### Compatibility / Security

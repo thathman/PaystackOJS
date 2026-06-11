@@ -113,7 +113,10 @@ class PaystackPaymentForm extends Form
         
         // For publication fees, get article name if available
         $articleTitle = null;
-        if ($this->_queuedPayment->getType() == PaymentManager::PAYMENT_TYPE_PUBLICATION) {
+        if (in_array((int) $this->_queuedPayment->getType(), [
+            PaymentManager::PAYMENT_TYPE_PUBLICATION,
+            \APP\payment\ojs\OJSPaymentManager::PAYMENT_TYPE_SUBMISSION,
+        ], true)) {
             try {
                 $submission = Repo::submission()->get($this->_queuedPayment->getAssocId());
                 if ($submission) {
@@ -122,7 +125,9 @@ class PaystackPaymentForm extends Form
                         $articleTitle = $publication->getLocalizedFullTitle(null, 'html');
                         if ($articleTitle) {
                             $articleTitle = strip_tags($articleTitle);
-                            $paymentName = $articleTitle . ' ' . __('payment.type.publication');
+                            $paymentName = (int) $this->_queuedPayment->getType() === \APP\payment\ojs\OJSPaymentManager::PAYMENT_TYPE_SUBMISSION
+                                ? __('payment.type.submission') . ' — ' . $articleTitle
+                                : $articleTitle . ' ' . __('payment.type.publication');
                         }
                     }
                 }
@@ -234,7 +239,10 @@ class PaystackPaymentForm extends Form
             }
             
             // For publication fees, get article title if available
-            if ($this->_queuedPayment->getType() == PaymentManager::PAYMENT_TYPE_PUBLICATION) {
+            if (in_array((int) $this->_queuedPayment->getType(), [
+            PaymentManager::PAYMENT_TYPE_PUBLICATION,
+            \APP\payment\ojs\OJSPaymentManager::PAYMENT_TYPE_SUBMISSION,
+        ], true)) {
                 try {
                     $submission = Repo::submission()->get($this->_queuedPayment->getAssocId());
                     if ($submission) {
@@ -243,7 +251,9 @@ class PaystackPaymentForm extends Form
                             $articleTitle = $publication->getLocalizedFullTitle(null, 'html');
                             if ($articleTitle) {
                                 $articleTitle = strip_tags($articleTitle);
-                                $paymentName = $articleTitle . ' ' . __('payment.type.publication');
+                                $paymentName = (int) $this->_queuedPayment->getType() === \APP\payment\ojs\OJSPaymentManager::PAYMENT_TYPE_SUBMISSION
+                                ? __('payment.type.submission') . ' — ' . $articleTitle
+                                : $articleTitle . ' ' . __('payment.type.publication');
                             }
                         }
                     }
